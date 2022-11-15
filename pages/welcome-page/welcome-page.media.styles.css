@@ -1,0 +1,54 @@
+@media (max-width: 1440px) {
+  .footer__nav {
+    width: 50vw;
+  }
+}
+@media (max-width: 731px) {
+  .main__welcome {
+    font-size: 30px;
+  }
+  .footer__nav {
+    width: 75vw;
+  }
+
+  .footer__rsschool-logo {
+    width: 60px;
+    height: 20px;
+  }
+}
+@media (max-width: 548px) {
+  .main__welcome {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 493px) {
+  .main__welcome {
+    font-size: 25px;
+  }
+  .footer__nav {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 457px) {
+  .main__welcome {
+    font-size: 22px;
+  }
+}
+@media (max-width: 402px) {
+  .main__welcome {
+    font-size: 20px;
+  }
+  .footer__nav {
+    font-size: 14px;
+  }
+}
+@media (max-width: 365px) {
+  .main__welcome {
+    font-size: 18px;
+  }
+  .footer__nav {
+    font-size: 14px;
+  }
+}

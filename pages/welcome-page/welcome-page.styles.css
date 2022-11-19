@@ -3,6 +3,11 @@
   src: url(../../assets/fonts/Comic_Neue/ComicNeue-Regular.ttf);
 }
 
+@font-face {
+  font-family: Dancing;
+  src: url(../../assets/fonts/Dancing_Script/static/DancingScript-Bold.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -71,8 +76,8 @@
 }
 
 .header__logo {
-  max-width: 60px;
-  max-height: 60px;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .header__nav-wrapper {
@@ -104,6 +109,12 @@
 
 .active-page__link {
   color: #3a3737;
+}
+
+.logo,
+.color {
+  font-family: Dancing;
+  font-size: 25px;
 }
 
 .main {

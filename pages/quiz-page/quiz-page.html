@@ -10,12 +10,16 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <link
+      rel="stylesheet"
+      href="./quiz-page.styles.css"
+    />
     <title>SongBird</title>
   </head>
   <body class="page">
     <header class="header">
       <nav class="header__nav">
-        <ul class="header__nav-elements-wrapper">
+        <ul class="header__nav-elements-wrapper unsorted-list">
           <li class="header__nav-element">
             <a
               href="../welcome-page/welcome-page.html"
@@ -24,15 +28,15 @@
             >
           </li>
           <li class="header__nav-element">
-            Score: <span class="header__score"></span>
+            Score: <span class="header__score">0</span>
           </li>
         </ul>
       </nav>
     </header>
     <main class="main">
       <section class="main__bird-types__wrapper">
-        <ul class="main__bird-types">
-          <li class="main__bird-type">Warm-up</li>
+        <ul class="main__bird-types unsorted-list">
+          <li class="main__bird-type active-bird-type">Warm-up</li>
           <li class="main__bird-type">Sparrows</li>
           <li class="main__bird-type">Forest Birds</li>
           <li class="main__bird-type">Song Birds</li>
@@ -43,13 +47,26 @@
 
       <section class="main__bird-sound__wrapper">
         <img
-          src=""
+          src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg"
           alt="bird"
+          class="main__bird-photo"
         />
         <div class="main__bird-name-and-sound__wrapper">
-          <h2 class="main__bird-name"></h2>
+          <h2 class="main__bird-name">*****</h2>
           <span class="main__horizontal-line"></span>
-          <audio src=""></audio>
+          <audio
+            controls
+            class="main__bird-sound"
+          >
+            <source
+              src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
+              type="audio/ogg"
+            />
+            <source
+              src="horse.mp3"
+              type="audio/mpeg"
+            />
+          </audio>
         </div>
       </section>
 

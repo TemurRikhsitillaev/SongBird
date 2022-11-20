@@ -112,7 +112,7 @@
 
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto 20vh 20vh;
+  grid-template-rows: auto auto auto auto;
 
   row-gap: 5vh;
   column-gap: 3vw;
@@ -186,7 +186,86 @@
 
 .main__bird-name-and-sound__wrapper {
   width: 70%;
-  max-height: 30vh;
+  max-height: 40vh;
+
+  padding: 10px;
+}
+
+.main__bird-name {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+}
+
+/* Audio starts */
+.main__bird-song {
+  width: 100%;
+  height: 40px;
+
+  background: transparent;
+}
+
+.main__bird-song::-webkit-media-controls-panel {
+  background-color: rgb(65, 15, 15, 0.6);
+  color: rgb(65, 15, 15);
+}
+/* Audio ends */
+
+.main__horizontal-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+
+  background-color: rgb(65, 15, 15, 0.9);
+
+  border-radius: 10px;
+
+  margin-bottom: 5vh;
+}
+
+.main__answer-choices__wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.main__answer-choices {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  border: 2px solid rgb(65, 15, 15, 0.9);
+  background-color: rgb(65, 15, 15, 0.8);
+
+  border-radius: 10px;
+}
+
+.main__bird-description__wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+  background-color: rgb(65, 15, 15, 0.8);
+  border: 2px solid rgb(65, 15, 15, 0.9);
+
+  padding: 15px;
+}
+
+.main__next-level__wrapper {
+  max-width: 100vw;
+  max-height: 5vh;
+
+  grid-column: 1/3;
+}
+.main__button__next-level {
+  width: 100%;
+  height: 5vh;
+
+  background-color: rgb(65, 15, 15, 0.8);
+
+  border: 2px solid rgb(65, 15, 15, 0.9);
+  border-radius: 10px;
+
+  padding: 15px;
 
   display: flex;
   justify-content: center;

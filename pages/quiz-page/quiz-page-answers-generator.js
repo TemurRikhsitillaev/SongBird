@@ -41,10 +41,10 @@ const randomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const randomNumberFromZeroToFive = randomNumber(0, 5);
-const birdsDataOneType = birdsDataEn[currentTypeOfBirds];
+let randomNumberFromZeroToFive = randomNumber(0, 5);
+let birdsDataOneType = birdsDataEn[currentTypeOfBirds];
 
-const correctAnswer = birdsDataOneType[randomNumberFromZeroToFive];
+let correctAnswer = birdsDataOneType[randomNumberFromZeroToFive];
 
 // generate random sounds
 const randomSound = () => {
@@ -82,59 +82,99 @@ const descriptionUpdater = (element) => {
   descriptionText.innerHTML = `${description}`;
 };
 
-const headerNameAndImgChanger = () => {
-  mainScore = +temporaryScore;
+// When correct answer is found, function change the name and image in header
+const headerNameAndImgChanger = (tempScore) => {
+  mainScore += tempScore;
   scoreHTML.innerHTML = `${mainScore}`;
 
   headerBirdNameHTML.innerHTML = `${correctAnswer.name}`;
   headerBirdImgHTML.src = `${correctAnswer.image}`;
   nextLevelButtonHMTL.classList.add("active-bird-type");
+  nextLevelButtonHMTL.setAttribute("active", "false");
 };
-console.log(correctAnswer);
 
 const activeBirdType = () => {
   headerBirdTypesHTML.forEach((type, index, array) => {
     type.classList.remove("active-bird-type");
-    console.log(type);
     if (type.getAttribute("id") == currentTypeOfBirds + 1) {
       type.classList.add("active-bird-type");
     }
   });
 };
 
-const nextLevelListener = () => {
-  if (currentTypeOfBirds !== 5) {
-    console.log("click");
-    currentTypeOfBirds++;
-    previousTypeOfBirds = currentTypeOfBirds - 1;
+const removePrevBirdsData = () => {
+  headerBirdNameHTML.innerHTML = "* * * * *";
+  headerBirdImgHTML.src =
+    "https://birds-quiz.netlify.app/static/media/bird.06a46938.jpg";
+  descriptionWrapperHTML.classList.add("displayNone");
+  withoutDescriptionHTML.classList.remove("displayNone");
 
-    activeBirdType();
-  }
-};
-
-const nextLevelFunction = () => {
-  nextLevelButtonHMTL.addEventListener("click", nextLevelListener);
+  console.log(correctAnswer);
 };
 
 const answerChecker = () => {
+  console.log(correctAnswer);
   answerHTML.forEach((element, index, array) => {
     element.addEventListener("click", (el) => {
       const clickedElementID = el.target.getAttribute("id");
       descriptionUpdater(element);
       if (correctAnswer.id == clickedElementID) {
         element.classList.add("main__right-answer");
-        headerNameAndImgChanger();
+        headerNameAndImgChanger(temporaryScore);
+        nextLevelButtonHMTL.setAttribute("active", "true");
         nextLevelFunction();
       } else {
         element.classList.add("main__wrong-answer");
-        if (temporaryScore == 0) temporaryScore = 0;
-        else temporaryScore--;
+        if (temporaryScore == 0) {
+          temporaryScore = 0;
+        } else {
+          temporaryScore--;
+        }
       }
+      console.log(temporaryScore, "temp score");
     });
   });
 };
 
-const resetingData = () => {};
+const resetingData = () => {
+  console.log("reset run");
+  randomNumberFromZeroToFive = randomNumber(0, 5);
+  temporaryScore = 5;
+  birdsDataOneType = birdsDataEn[currentTypeOfBirds];
+  correctAnswer = birdsDataOneType[randomNumberFromZeroToFive];
+  answersGenerator();
+  removePrevBirdsData();
+  randomSound();
+  // answerChecker();
+
+  answerHTML.forEach((element, index, array) => {
+    element.classList.remove("main__right-answer");
+    element.classList.remove("main__wrong-answer");
+  });
+
+  nextLevelButtonHMTL.classList.remove("active-bird-type");
+};
+
+const nextLevelListener = () => {
+  if (
+    currentTypeOfBirds !== 5 &&
+    nextLevelButtonHMTL.getAttribute("active") == "true"
+  ) {
+    // mainScore += temporaryScore;
+    // scoreHTML.innerHTML = `${mainScore}`;
+    currentTypeOfBirds++;
+    previousTypeOfBirds = currentTypeOfBirds - 1;
+
+    nextLevelButtonHMTL.setAttribute("active", "false");
+
+    activeBirdType();
+    resetingData();
+  }
+};
+
+const nextLevelFunction = () => {
+  nextLevelButtonHMTL.addEventListener("click", nextLevelListener);
+};
 
 randomSound();
 answersGenerator();

@@ -157,10 +157,6 @@
   border-bottom-right-radius: 10px;
 }
 
-.active-bird-type {
-  background-color: rgb(65, 15, 15);
-}
-
 .main__bird-sound__wrapper {
   grid-column: 1/3;
 
@@ -182,6 +178,8 @@
   max-height: 30vh;
 
   border-radius: 10px;
+
+  object-fit: cover;
 }
 
 .main__bird-name-and-sound__wrapper {
@@ -200,11 +198,13 @@
 .main__bird-song {
   width: 100%;
   height: 40px;
-
-  background: transparent;
 }
 
 .main__bird-song::-webkit-media-controls-panel {
+  background-color: rgb(65, 15, 15, 0.6);
+  color: rgb(65, 15, 15);
+}
+.main__description-song::-webkit-media-controls-panel {
   background-color: rgb(65, 15, 15, 0.6);
   color: rgb(65, 15, 15);
 }
@@ -235,7 +235,7 @@
 
 .main__answer-choices__wrapper {
   width: 100%;
-  height: 100%;
+  height: auto;
   border-radius: 10px;
 
   border: 2px solid rgb(65, 15, 15, 0.9);
@@ -264,6 +264,8 @@
 
 .main__answer:hover {
   background-color: rgb(65, 15, 15);
+
+  z-index: 1;
 }
 
 .main__next-level__wrapper {
@@ -286,6 +288,74 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
 }
 
-/* Audio custom */
+.main__wrong-answer {
+  background-color: rgb(145, 10, 10);
+  z-index: 2;
+}
+
+.main__right-answer {
+  background-color: rgb(0, 143, 12);
+  z-index: 2;
+}
+
+.main__with-description {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: auto auto;
+
+  column-gap: 2vw;
+  row-gap: 2vh;
+}
+
+.main__description-img {
+  width: 20vw;
+  height: 30vh;
+
+  border-radius: 10px;
+
+  object-fit: cover;
+
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.main__description-text__wrapper {
+  width: 100%;
+  height: auto;
+
+  padding: 10px;
+}
+
+.main__description-name-en,
+.main__description-name-ru {
+  font-size: 30px;
+}
+
+.main__description-line {
+  width: 70%;
+  margin: 3vh 0;
+}
+
+.main__description-song {
+  width: 90%;
+  height: 25px;
+}
+
+.main__description-text {
+  grid-column: 1/3;
+
+  width: 90%;
+  height: auto;
+}
+
+.displayNone {
+  display: none;
+}
+
+.active-bird-type {
+  background-color: rgb(65, 15, 15);
+}

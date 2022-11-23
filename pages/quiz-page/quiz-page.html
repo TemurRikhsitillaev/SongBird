@@ -36,12 +36,42 @@
     <main class="main">
       <section class="main__bird-types__wrapper">
         <ul class="main__bird-types unsorted-list">
-          <li class="main__bird-type active-bird-type">Warm-up</li>
-          <li class="main__bird-type">Sparrows</li>
-          <li class="main__bird-type">Forest Birds</li>
-          <li class="main__bird-type">Song Birds</li>
-          <li class="main__bird-type">Birds of Prey</li>
-          <li class="main__bird-type">Sea Birds</li>
+          <li
+            class="main__bird-type active-bird-type"
+            id="1"
+          >
+            Warm-up
+          </li>
+          <li
+            class="main__bird-type"
+            id="2"
+          >
+            Sparrows
+          </li>
+          <li
+            class="main__bird-type"
+            id="3"
+          >
+            Forest Birds
+          </li>
+          <li
+            class="main__bird-type"
+            id="4"
+          >
+            Song Birds
+          </li>
+          <li
+            class="main__bird-type"
+            id="5"
+          >
+            Birds of Prey
+          </li>
+          <li
+            class="main__bird-type"
+            id="6"
+          >
+            Sea Birds
+          </li>
         </ul>
       </section>
 
@@ -62,7 +92,7 @@
           >
             <source
               src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
-              type="audio/mp3"
+              type="audio/mpeg"
               class="main__audio-src"
             />
           </audio>
@@ -81,8 +111,40 @@
       </section>
 
       <section class="main__bird-description__wrapper">
-        Listen the audio. <br />
-        Select a bird from the list.
+        <div class="main__without-description">
+          Listen the audio. <br />
+          Select a bird from the list.
+        </div>
+
+        <div class="main__with-description displayNone">
+          <img
+            class="main__description-img"
+            src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg"
+          />
+          <div class="main__description-text__wrapper">
+            <h2 class="main__description-name-en">Raven</h2>
+            <span class="main__horizontal-line main__description-line"></span>
+            <h2 class="main__description-species">Lkdjg</h2>
+            <span class="main__horizontal-line main__description-line"></span>
+            <audio
+              controls
+              preload="metadata"
+              class="main__description-song"
+            >
+              <source
+                src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
+                type="audio/mpeg"
+              />
+            </audio>
+          </div>
+
+          <p class="main__description-text">
+            Ворон крупная птица. Длина тела достигает 70 сантиметров, размах
+            крыльев до полутора метров. Вороны населяют окрестности Тауэра. В
+            Англии бытует поверье, что в день, когда черные вороны улетят от
+            Тауэра, монархия рухнет.
+          </p>
+        </div>
       </section>
 
       <section class="main__next-level__wrapper">

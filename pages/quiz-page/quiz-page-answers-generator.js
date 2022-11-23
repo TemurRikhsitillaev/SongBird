@@ -25,6 +25,10 @@ const headerBirdNameHTML = document.querySelector(".main__bird-name");
 const nextLevelButtonHMTL = document.querySelector(".main__button__next-level");
 const headerBirdTypesHTML = document.querySelectorAll(".main__bird-type");
 const linkToLastHTML = document.querySelector(".main__link-to-final");
+const finalScore = document.querySelector(".player-score");
+const headerHTML = document.querySelector(".header");
+const mainHTML = document.querySelector(".main");
+const finalMainHMTL = document.querySelector(".final-main");
 
 //////////////////////////////////////////////////////////////////
 
@@ -87,6 +91,8 @@ const descriptionUpdater = (element) => {
 const headerNameAndImgChanger = (tempScore) => {
   mainScore += tempScore;
   scoreHTML.innerHTML = `${mainScore}`;
+  finalScore.innerHTML = `${mainScore}`;
+
   console.log(mainScore);
 
   headerBirdNameHTML.innerHTML = `${correctAnswer.name}`;
@@ -174,7 +180,10 @@ const nextLevelListener = () => {
     resetingData();
   } else if (currentTypeOfBirds == 5) {
     console.log("toptop");
-    linkToLastHTML.setAttribute("href", "../final-page/final-page.html");
+    finalMainHMTL.classList.remove("displayNone");
+    mainHTML.classList.add("displayNone");
+    headerHTML.classList.add("displayNone");
+    // linkToLastHTML.setAttribute("href", "../final-page/final-page.html");
   }
 };
 

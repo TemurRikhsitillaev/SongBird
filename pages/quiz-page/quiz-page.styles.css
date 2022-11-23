@@ -359,3 +359,39 @@
 .active-bird-type {
   background-color: rgb(65, 15, 15);
 }
+
+.main__text__congrats {
+  text-align: center;
+  font-size: 50px;
+}
+
+.main__text__about-score,
+.player-score {
+  text-align: center;
+  font-size: 40px;
+}
+
+.main__text__about-score {
+  margin: 10vh 0;
+}
+
+.main__quiz-page-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.main__button__play-again {
+  width: 30vw;
+  height: auto;
+
+  margin: 0 auto;
+  padding: 20px;
+
+  background-color: rgb(65, 15, 15, 0.8);
+
+  border: 2px solid rgb(65, 15, 15);
+  border-radius: 20px;
+
+  font-size: 25px;
+  text-align: center;
+}

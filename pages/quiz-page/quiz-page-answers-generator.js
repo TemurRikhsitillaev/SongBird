@@ -24,13 +24,14 @@ const headerBirdImgHTML = document.querySelector(".main__bird-photo");
 const headerBirdNameHTML = document.querySelector(".main__bird-name");
 const nextLevelButtonHMTL = document.querySelector(".main__button__next-level");
 const headerBirdTypesHTML = document.querySelectorAll(".main__bird-type");
+const linkToLastHTML = document.querySelector(".main__link-to-final");
 
 //////////////////////////////////////////////////////////////////
 
 // Variables
 
-let mainScore = 0,
-  temporaryScore = 5,
+export let mainScore = 0;
+let temporaryScore = 5,
   currentTypeOfBirds = 0,
   previousTypeOfBirds = 0;
 
@@ -86,6 +87,7 @@ const descriptionUpdater = (element) => {
 const headerNameAndImgChanger = (tempScore) => {
   mainScore += tempScore;
   scoreHTML.innerHTML = `${mainScore}`;
+  console.log(mainScore);
 
   headerBirdNameHTML.innerHTML = `${correctAnswer.name}`;
   headerBirdImgHTML.src = `${correctAnswer.image}`;
@@ -162,6 +164,7 @@ const nextLevelListener = () => {
   ) {
     // mainScore += temporaryScore;
     // scoreHTML.innerHTML = `${mainScore}`;
+
     currentTypeOfBirds++;
     previousTypeOfBirds = currentTypeOfBirds - 1;
 
@@ -169,6 +172,9 @@ const nextLevelListener = () => {
 
     activeBirdType();
     resetingData();
+  } else if (currentTypeOfBirds == 5) {
+    console.log("toptop");
+    linkToLastHTML.setAttribute("href", "../final-page/final-page.html");
   }
 };
 
@@ -176,6 +182,7 @@ const nextLevelFunction = () => {
   nextLevelButtonHMTL.addEventListener("click", nextLevelListener);
 };
 
+// export default mainScore;
 randomSound();
 answersGenerator();
 answerChecker();

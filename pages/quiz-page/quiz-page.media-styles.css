@@ -139,4 +139,17 @@
     font-size: 20px;
     padding: 15px;
   }
+
+  .main__with-description {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: auto auto;
+
+    column-gap: 2vw;
+    row-gap: 2vh;
+  }
+  .main__description-img {
+    width: 100%;
+    height: auto;
+  }
 }

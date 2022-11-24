@@ -152,4 +152,7 @@
     width: 100%;
     height: auto;
   }
+  .displayNone {
+    display: none;
+  }
 }
